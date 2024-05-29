@@ -33,6 +33,10 @@ public class TestCases {
         options.addArguments("--disable-blink-features=AutomationControlled");
 
         // Set path for log file
+        File theDir = new File("logs");
+        if (!theDir.exists()) {
+            theDir.mkdirs();
+        }
         System.setProperty(ChromeDriverService.CHROME_DRIVER_LOG_PROPERTY, "logs" + File.separator + "chromedriver.log");
 
         driver = new ChromeDriver(options);
